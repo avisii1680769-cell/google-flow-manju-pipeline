@@ -9,13 +9,13 @@
 
 - 🧠 **小说原文直接适配**：输入一段小说文本，自动解构冲突，输出包含景别、时码、运镜、台词与音效的导演级分镜剧本。
 - 🎨 **四视图一致性故事板**：严格遵循专业漫剧视觉基准规范，一键生成人物 4 视图（正/侧/背/特写）与场景 3 视角氛围板，彻底终结人物脸型、服装与光影漂移。
-- ⚡ **统一 Veo 3.1 - Lite 模型**：全链路锁定 Google 最新的视频模型 `Veo 3.1 - Lite`，确保画面质感统一、细节逼真、算力消耗最优。
+- ⚡ **统一 Veo 3.1 - Lite 模型**：全链路锁定 Google 顶级视频模型 `Veo 3.1 - Lite`，确保画面质感统一、细节逼真、算力消耗最优。
 - ⏩ **官方时间轴【延续镜头】深度集成**：独创 DOM 级自动化交互技术，攻克 Playwright 模拟被 Tooltip 拦截难题，通过时间轴 `>> 延续镜头（Veo 3.1 - Lite）` 顺承延展生成 15s+ 连贯长场景。
-- 🎵 **100% Flow 原生音轨保真**：坚决摒弃粗暴剥离原声并用 gTTS 机械假喉咙覆盖的做法！直接提取并保留 Google Flow 内部原生 48kHz 立体声音轨（含真实的低频电磁轰鸣、高频数码脉冲、微弱电流声与环境混响）。
+- 🎵 **100% Flow 原生音轨保真与人声对齐**：坚决摒弃粗暴剥离原声并用 gTTS 机械假喉咙覆盖的做法！直接提取并保留 Google Flow 内部原生 48kHz 立体声音轨（含真实的低频电磁轰鸣、高频数码脉冲、微弱电流声与环境混响），人物说话发音与字幕字字精准对齐。
 - 📝 **标准短剧字幕与合规声明**：
-  - **底部主字幕**：采用思源黑体 Extra Black / Heavy，纯白字身 + 7px 纯黑饱满描边 + 微投射阴影，居中饱满呈现。
+  - **底部主字幕**：采用思源黑体 Extra Black / Heavy，纯白字身 + 8px 纯黑饱满描边 + 微投射阴影，居中饱满呈现。
   - **右侧声明**：右边缘纵向单列排版「**故事纯属虚构  内容由AI生成**」，英文缩写“AI”采用纵中横水平排版。
-- 🌐 **一键在线影院交付**：自动压制 1080P MP4 电影画质、导出 12s 预览 GIF，并生成现代暗黑风格的 HTML5 在线交互影院。
+- 🌐 **GitHub 全球托管在线影院**：成品视频与交互播放器完全托管于 GitHub（GitHub Pages + GitHub Releases），免去自建服务器运维成本，支持全球 CDN 流式秒播与高清下载。
 
 ---
 
@@ -27,9 +27,9 @@ flowchart TD
     B --> C["🎨 第二阶段：四视图一致性故事板基准"]
     C --> D["⚡ 第三阶段：Google Flow 首镜渲染 (Veo 3.1 - Lite)"]
     D --> E["⏩ 第四阶段：时间轴【延续镜头】长场景延展"]
-    E --> F["🎧 第五阶段：100% Flow 原生音轨提取与保真"]
+    E --> F["🎧 第五阶段：100% Flow 原生音轨提取与人声对齐"]
     F --> G["📝 第六阶段：短剧粗黑边白字 + 右侧合规声明压制"]
-    G --> H["🎉 最终成片：1080P 超清 MP4 + GIF 动图 + 在线影院"]
+    G --> H["🎉 最终成片：GitHub Pages 在线影院 + Releases 高清交付"]
 ```
 
 ---
@@ -52,8 +52,12 @@ flow-manju-pipeline/
 │   ├── storyboard_renderer.py# 多宫格故事板与抽帧合成工具
 │   ├── subtitle_generator.py # 短剧粗黑边白字字幕与竖排声明生成器
 │   └── video_assembler.py    # FFmpeg 黄金 12 秒精剪、保真混录与无损压制
-├── web_player/
-│   └── index.html            # 独立在线漫剧影院播放器模版
+├── docs/                     # GitHub Pages 官方在线影院根目录
+│   ├── index.html            # 独立在线漫剧影院播放器
+│   ├── three_body_12s_final.mp4 # 1080P 超清 MP4 成片
+│   ├── three_body_12s_preview.gif # 12秒预览动图
+│   └── shot*_qc_frame.png    # 质检抽帧对照图
+├── assets/                   # 项目媒体静态资产库
 └── examples/
     └── three_body_12s/       # 《三体 · 幽灵倒计时》12秒漫剧全套生产范例
 ```
@@ -66,7 +70,7 @@ flow-manju-pipeline/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/avisii1680769/google-flow-manju-pipeline.git
+git clone https://github.com/avisii1680769-cell/google-flow-manju-pipeline.git
 cd google-flow-manju-pipeline
 
 # 安装系统依赖 (Ubuntu/Debian)
@@ -95,24 +99,50 @@ python src/cli.py run --config examples/three_body_12s/config.json --duration 12
 
 流水线将自动完成：
 1. 生成视觉故事板并锚定角色
-2. 在 Google Flow 中渲染首镜
+2. 在 Google Flow 中渲染首镜 (Veo 3.1 - Lite)
 3. 调用时间轴【延续镜头（Veo 3.1 - Lite）】生成 15s+ 连贯场景并导出
-4. 提取 Flow 原生音轨并剪辑为 12.0s
+4. 提取 Flow 原生音轨，ASR 时码对齐并剪辑为 12.0s
 5. 压制短剧经典字幕与右侧合规声明
-6. 输出成片并部署至 Web 播放器
+6. 输出成片并部署至 GitHub Pages
 
 ---
 
 ## 🎬 演示范例：《三体 · 幽灵倒计时》12秒漫剧
 
-| 镜头编号 | 画面剧情 (Veo 3.1 - Lite 延续镜头) | 底部短剧字幕 | 右侧合规声明 |
-| :--- | :--- | :--- | :--- |
-| **Shot 1 (0-4s)** | 汪淼伏案工作，视线前方突兀浮现翠绿色幽灵倒计时 | 这……这是什么？它怎么在跳动…… | 故事纯属虚构 内容由AI生成 |
-| **Shot 2 (4-8s)** | 延续镜头运镜顺承，汪淼惊骇探身，视线随数字移动 | 幽灵倒计时……它直接印在我的视网膜上！ | 故事纯属虚构 内容由AI生成 |
-| **Shot 3 (8-12s)** | 汪淼痛苦抱头闭眼，倒计时在视网膜深处漆黑中燃烧 | 这不是幻觉……倒计时归零会发生什么？！ | 故事纯属虚构 内容由AI生成 |
+> **故事背景**：纳米物理学者汪淼在深夜实验室核对数据，眼前突兀浮现翠绿色幽灵数字倒计时。他试图闭眼甩开残影，但数字却赫然烙印在视网膜深处的漆黑之中。
 
-- **在线影院预览**：[http://47.85.92.56/three_body/](http://47.85.92.56/three_body/)
-- **1080P MP4 成片**：[http://47.85.92.56/three_body/three_body_12s_final.mp4](http://47.85.92.56/three_body/three_body_12s_final.mp4)
+### 🌐 在线观看与下载渠道 (GitHub 托管)
+
+- 🖥️ **GitHub Pages 官方在线影院**：[https://avisii1680769-cell.github.io/google-flow-manju-pipeline/](https://avisii1680769-cell.github.io/google-flow-manju-pipeline/)
+- 📦 **GitHub Releases 高清下载 (v1.0.0)**：[Release v1.0.0 页面](https://github.com/avisii1680769-cell/google-flow-manju-pipeline/releases/tag/v1.0.0)
+- 🎥 **GitHub 仓库视频在线直放**：[`three_body_12s_final.mp4`](https://github.com/avisii1680769-cell/google-flow-manju-pipeline/blob/main/docs/three_body_12s_final.mp4)
+
+---
+
+### 📺 12秒全片动图预览
+
+![三体幽灵倒计时12秒成片预览](assets/three_body_12s_preview.gif)
+
+---
+
+### 🔍 镜头台词与声画毫秒级对齐表
+
+| 镜头编号与时码 | 画面剧情 (Veo 3.1 - Lite 延续镜头) | 原声音轨台词 (字字吻合) | 右侧合规声明 |
+| :--- | :--- | :--- | :--- |
+| **镜头一 (00:00 - 00:02.1)** | 汪淼伏案工作，视线前方半空中突兀浮现翠绿幽灵数字 | **“这……这是什么？！”** | 故事纯属虚构  内容由AI生成 |
+| **镜头二 (00:02.4 - 00:04.4)** | 绿光映照钛金镜片，神色骇然困惑 | **“实验仪器的残影？……”** | 故事纯属虚构  内容由AI生成 |
+| **镜头三 (00:04.7 - 00:06.6)** | 数字跳动加速，失声惊呼，倒吸冷气 | **“不对，它在跳动……！”** | 故事纯属虚构  内容由AI生成 |
+| **镜头四 (00:07.0 - 00:12.0)** | 官方时间轴【延续镜头】顺承延展，急促喘息，摘镜抱头闭眼，幽灵倒计时烙印在视网膜深处漆黑中永恒燃烧 | *（急促喘息，电磁脉冲原声）* | 故事纯属虚构  内容由AI生成 |
+
+---
+
+### 🖼️ 质检抽帧对照
+
+| 镜头一 (01.0s) | 镜头二 (03.2s) |
+| :---: | :---: |
+| ![Shot 1](assets/shot1_qc_frame.png) | ![Shot 2](assets/shot2_qc_frame.png) |
+| **镜头三 (05.5s)** | **镜头四 (11.0s)** |
+| ![Shot 3](assets/shot3_qc_frame.png) | ![Shot 4](assets/shot4_qc_frame.png) |
 
 ---
 

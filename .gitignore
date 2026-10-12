@@ -4,11 +4,19 @@ __pycache__/
 config/flow_cookies.json
 workspace/
 temp/
-*.mp4
-*.wav
-*.gif
 .env
 .venv
 env/
 venv/
 .DS_Store
+
+# 忽略临时音视频，但保留 docs/ 与 assets/ 交付成片与动图
+*.wav
+*.mp4
+*.gif
+!docs/*.mp4
+!docs/*.gif
+!assets/*.mp4
+!assets/*.gif
+!examples/**/*.mp4
+!examples/**/*.gif
