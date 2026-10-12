@@ -1,0 +1,33 @@
+{
+  "project_name": "three_body_ghost_countdown",
+  "flow_project_url": "https://flow.google.com/project/YOUR_PROJECT_ID",
+  "target_duration_seconds": 12.0,
+  "video_resolution": "1920x1080",
+  "model": "Veo 3.1 - Lite",
+  "character": {
+    "name": "Wang Miao",
+    "description": "38-year-old Asian male senior physicist, messy curly black hair, thin wire-rimmed titanium glasses, dark charcoal turtleneck, white lab coat"
+  },
+  "scene": {
+    "name": "Nanomaterial Physics Lab",
+    "description": "Dimly lit high-tech dark physics laboratory at midnight, computer monitors displaying green spectral curves, glowing neon green digital numbers"
+  },
+  "subtitles": [
+    {
+      "start": 0.8,
+      "end": 4.0,
+      "text": "这……这是什么？它怎么在跳动……"
+    },
+    {
+      "start": 4.5,
+      "end": 8.0,
+      "text": "幽灵倒计时……它直接印在我的视网膜上！"
+    },
+    {
+      "start": 8.5,
+      "end": 11.8,
+      "text": "这不是幻觉……倒计时归零会发生什么？！"
+    }
+  ],
+  "disclaimer": "故事纯属虚构  内容由AI生成"
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+config/flow_cookies.json
+workspace/
+temp/
+*.mp4
+*.wav
+*.gif
+.env
+.venv
+env/
+venv/
+.DS_Store

@@ -1,0 +1,20 @@
+[Script Info]
+Title: Three-Body Ghost Countdown 12s Douyin Style
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: BottomSub,Noto Sans CJK SC,60,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,1,0,1,7,3,2,60,60,110,1
+Style: RightDisclaimer,Noto Sans CJK SC,30,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,4,2,9,60,40,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:12.00,RightDisclaimer,,0,0,0,,{\pos(1856,238)}故\N事\N纯\N属\N虚\N构\N \N内\N容\N由\NAI\N生\N成
+Dialogue: 0,0:00:00.80,0:00:04.00,BottomSub,,0,0,0,,这……这是什么？它怎么在跳动……
+Dialogue: 0,0:00:04.50,0:00:08.00,BottomSub,,0,0,0,,幽灵倒计时……它直接印在我的视网膜上！
+Dialogue: 0,0:00:08.50,0:00:11.80,BottomSub,,0,0,0,,这不是幻觉……倒计时归零会发生什么？！
