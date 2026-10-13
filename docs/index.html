@@ -106,23 +106,26 @@
     .quick-nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       margin-top: 16px;
       justify-content: center;
+      max-height: 220px;
+      overflow-y: auto;
+      padding: 6px;
     }
     .nav-btn {
       background: #131d2e;
       border: 1px solid #233754;
       color: var(--text);
-      padding: 10px 16px;
+      padding: 8px 14px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .nav-btn:hover {
       background: rgba(245, 158, 11, 0.15);
@@ -132,8 +135,8 @@
       box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
     }
     .nav-btn .dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--glow-gold);
       box-shadow: 0 0 8px var(--glow-gold);
@@ -196,14 +199,6 @@
       border-color: rgba(245, 158, 11, 0.4);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    }
-    .card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      border: 1px solid rgba(255,255,255,0.06);
     }
     .card-title {
       font-size: 15px;
@@ -296,19 +291,19 @@
 <body>
 
   <div class="header">
-    <div class="badge">16:9 电影画幅 · 100% GOOGLE FLOW 原生渲染 · 黄金5秒高光前置 · 结尾生死留钩 · GITHUB 托管</div>
+    <div class="badge">16:9 电影画幅 · 100% GOOGLE FLOW 原生渲染 · 18 镜头完整正片 (2分16秒) · 黄金5秒高光前置 · 结尾生死留钩 · GITHUB 托管</div>
     <h1>《继承动物园后，我通兽语成为国家团宠》第 1 集</h1>
-    <p class="subtitle">奇迹救赎系统觉醒 · 炸毛毒舌麻雀跨物种对线 · 千万巨额借款公证书 · 狂暴雄狮金鬃破笼绝命留钩</p>
+    <p class="subtitle">奇迹救赎系统觉醒 · 万兽通识语感 · 炸毛毒舌麻雀 · 傲娇孔雀骂街 · 贪吃浣熊护食 · 金鬃雄狮破笼绝命留钩</p>
   </div>
 
   <div class="correction-box">
-    <strong>✨ 100% Google Flow (Veo 3.1 - Lite) 纯正电影级全流程指标：</strong><br>
-    • <strong>严禁非 Flow 混用</strong>：全部视频镜头均在 Google Flow 云端由 Veo 3.1 - Lite 模型原生生成，坚决杜绝静态图轮播与粗制滥造。<br>
-    • <strong>16:9 固定宽屏画幅</strong>：1920x1080 超清物理分辨率，全局构图统一。<br>
-    • <strong>黄金 5 秒高光前置（00:00 - 00:05）</strong>：炸毛小麻雀惊叫「两脚兽成精了！」+ 姜瑾把玩黄铜钥匙霸气反杀「再废话拿你烤了抵债」，秒级锁死完播率！<br>
-    • <strong>结尾高潮生死卡点留钩（00:24.8 - 00:32.8）</strong>：猛兽区红灯警报狂闪，狂暴金鬃雄狮撞弯重型钢网扑面怒吼断章，追更欲望直接拉满！<br>
-    • <strong>100% 保留 Flow 原生 48kHz 音轨</strong>：保留真实废墟风声、金属钥匙碰撞、千万合同重击、全息高科技数码脉冲与震撼雄狮低频怒吼。<br>
-    • <strong>短剧经典黑边字幕 & 垂直合规声明</strong>：思源黑体 Extra Black 饱满白字 + 9px 纯黑饱满描边，右侧纵排单列「故事纯属虚构 内容由AI生成」。
+    <strong>✨ 100% Google Flow (Veo 3.1 - Lite) 工业级全流程短剧指标：</strong><br>
+    • <strong>严禁非 Flow 混用</strong>：全部 18 个镜头均在 Google Flow 云端由 Veo 3.1 - Lite 原生模型生成，坚决杜绝静态拼贴与粗制滥造。<br>
+    • <strong>完整正片时长达标</strong>：总时长 <strong>2分16秒80</strong>，完美满足 2分钟 ~ 3分钟 标准单集短剧规范。<br>
+    • <strong>黄金 5 秒高光前置（00:00 - 00:05）</strong>：炸毛小麻雀尖叫「两脚兽成精了！」+ 姜瑾把玩黄铜钥匙霸气反杀「再废话拿你烤了抵债」，秒级锁死完播率！<br>
+    • <strong>结尾高潮生死卡点留钩（02:08.8 - 02:16.8）</strong>：特级禁区红光狂闪，重型铁链崩断，狂暴金鬃雄狮撞弯铁笼扑面咆哮断章，留钩极致！<br>
+    • <strong>100% 保留 Flow 原生 48kHz 音轨</strong>：废墟冷风、铁链碰撞、合同重击、豪车暴鸣、全息数码流与雄狮低频怒吼全程原生保留。<br>
+    • <strong>短剧经典黑边字幕 & 垂直合规声明</strong>：思源黑体 Extra Black 粗黑边白字 + 9px 纯黑饱满描边，右侧纵排单列「故事纯属虚构 内容由AI生成」。
   </div>
 
   <div class="player-container">
@@ -320,58 +315,50 @@
     </div>
 
     <div class="quick-nav">
-      <button class="nav-btn" onclick="jumpTo(0.1)">
-        <span class="dot"></span>
-        <span>00:00 · 黄金5秒生死钩：两脚兽成精了！</span>
-      </button>
-      <button class="nav-btn" onclick="jumpTo(2.8)">
-        <span class="dot"></span>
-        <span>00:02.8 · 姜瑾冷艳对线：拿你烤了抵债</span>
-      </button>
-      <button class="nav-btn" onclick="jumpTo(8.8)">
-        <span class="dot"></span>
-        <span>00:08.8 · 第1幕：千万借贷合同拍击</span>
-      </button>
-      <button class="nav-btn" onclick="jumpTo(16.8)">
-        <span class="dot"></span>
-        <span>00:16.8 · 第2幕：奇迹系统觉醒绑定</span>
-      </button>
-      <button class="nav-btn" onclick="jumpTo(24.8)">
-        <span class="dot"></span>
-        <span>00:24.8 · 第3幕：狂暴雄狮破笼绝命钩！</span>
-      </button>
+      <button class="nav-btn" onclick="jumpTo(0.1)"><span class="dot"></span>00:00 · 黄金5秒：两脚兽成精！</button>
+      <button class="nav-btn" onclick="jumpTo(2.8)"><span class="dot"></span>00:02.8 · 姜瑾冷艳反杀：烤了抵债</button>
+      <button class="nav-btn" onclick="jumpTo(8.8)"><span class="dot"></span>00:08.8 · 荒废园区建立：老头子的遗产</button>
+      <button class="nav-btn" onclick="jumpTo(16.8)"><span class="dot"></span>00:16.8 · 千万借贷公证书重击</button>
+      <button class="nav-btn" onclick="jumpTo(24.8)"><span class="dot"></span>00:24.8 · 黑衣打手叫嚣威胁推平</button>
+      <button class="nav-btn" onclick="jumpTo(32.8)"><span class="dot"></span>00:32.8 · 姜瑾冷酷宣战：三十天还清</button>
+      <button class="nav-btn" onclick="jumpTo(40.8)"><span class="dot"></span>00:40.8 · 催债豪车暴鸣倒车离去</button>
+      <button class="nav-btn" onclick="jumpTo(48.8)"><span class="dot"></span>00:48.8 · 奇迹救赎系统觉醒</button>
+      <button class="nav-btn" onclick="jumpTo(56.8)"><span class="dot"></span>00:56.8 · 全息HUD展开·十倍返利</button>
+      <button class="nav-btn" onclick="jumpTo(64.8)"><span class="dot"></span>01:04.8 · 瞳孔泛光·听见动物心声</button>
+      <button class="nav-btn" onclick="jumpTo(72.8)"><span class="dot"></span>01:12.8 · 秃毛孔雀骂街：老子要吃牛肉</button>
+      <button class="nav-btn" onclick="jumpTo(80.8)"><span class="dot"></span>01:20.8 · 小浣熊护食：谁也别抢干脆面</button>
+      <button class="nav-btn" onclick="jumpTo(88.8)"><span class="dot"></span>01:28.8 · 金丝猴急跳脚：猛兽区大猫疯了</button>
+      <button class="nav-btn" onclick="jumpTo(96.8)"><span class="dot"></span>01:36.8 · 姜瑾脸色骤变·奔向禁区</button>
+      <button class="nav-btn" onclick="jumpTo(104.8)"><span class="dot"></span>01:44.8 · 猛兽区长廊·红灯警报狂闪</button>
+      <button class="nav-btn" onclick="jumpTo(112.8)"><span class="dot"></span>01:52.8 · 地面震颤·重型铁链崩断</button>
+      <button class="nav-btn" onclick="jumpTo(120.8)"><span class="dot"></span>02:00.8 · 尘烟弥漫·推开防暴合金门</button>
+      <button class="nav-btn" onclick="jumpTo(128.8)"><span class="dot"></span>02:08.8 · 终极绝命留钩：狂暴雄狮破笼咆哮！</button>
     </div>
 
     <div class="actions">
       <a class="btn-primary" href="zoo_pet_ep01_final.mp4" download="zoo_pet_ep01_final.mp4">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM12 4v9.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V4h1z"/></svg>
-        下载 1080p 超清母带正片 (MP4)
-      </a>
-      <a class="btn-secondary" href="zoo_pet_ep01_preview.gif" download="zoo_pet_ep01_preview.gif">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 13.5v-7l5 3.5-5 3.5z"/></svg>
-        下载 动图快速预览 (GIF)
+        下载 2分16秒 完整超清母带 (1080p MP4)
       </a>
       <a class="btn-secondary" href="https://github.com/avisii1680769-cell/google-flow-manju-pipeline" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-        访问 GitHub 开源仓库
+        访问 GitHub 开源项目仓库
       </a>
     </div>
   </div>
 
   <div class="cards-grid">
     <div class="card">
-      <img class="card-img" src="shot1_qc_frame.png" alt="Shot 1 麻雀炸毛" onclick="jumpTo(0.1)" style="cursor:pointer;">
       <div class="card-title">
         <span>黄金 5 秒 · 两脚兽成精</span>
         <span class="card-tag">00:00 - 00:02.8</span>
       </div>
       <div class="card-desc">
-        <strong>开局前置高光</strong>：麻雀炸毛尖叫「卧槽！两脚兽成精了！她真能听懂我骂她？！」，好奇心瞬间引爆，秒级留存！
+        <strong>开局前置高光</strong>：麻雀炸毛尖叫「卧槽！两脚兽成精了！她真能听懂我骂她？！」，好奇心秒级锁死！
       </div>
     </div>
 
     <div class="card">
-      <img class="card-img" src="shot2_qc_frame.png" alt="Shot 2 姜瑾反杀" onclick="jumpTo(2.8)" style="cursor:pointer;">
       <div class="card-title">
         <span>黄金 5 秒 · 姜瑾霸气反杀</span>
         <span class="card-tag">00:02.8 - 00:08.8</span>
@@ -382,35 +369,42 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="shot3_qc_frame.png" alt="Shot 3 千万债务" onclick="jumpTo(8.8)" style="cursor:pointer;">
       <div class="card-title">
-        <span>第 1 幕 · 千万催命合同</span>
-        <span class="card-tag">00:08.8 - 00:16.8</span>
+        <span>第 1 幕 · 巨额债务压顶</span>
+        <span class="card-tag">00:08.8 - 00:48.8</span>
       </div>
       <div class="card-desc">
-        <strong>天崩开局</strong>：凶悍催债人将千万借款公证书重重拍在车盖上！「一个月不还清，连人带动物园全被法拍！」
+        <strong>天崩开局</strong>：荒废动物园面临一千万催命债务，黑衣催债人逼近叫嚣，姜瑾从容立下三十天赌约，豪车咆哮离去。
       </div>
     </div>
 
     <div class="card">
-      <img class="card-img" src="shot4_qc_frame.png" alt="Shot 4 系统觉醒" onclick="jumpTo(16.8)" style="cursor:pointer;">
       <div class="card-title">
         <span>第 2 幕 · 奇迹系统觉醒</span>
-        <span class="card-tag">00:16.8 - 00:24.8</span>
+        <span class="card-tag">00:48.8 - 01:12.8</span>
       </div>
       <div class="card-desc">
-        <strong>绝境觉醒</strong>：荒废庭院浮现淡青色全息数码矩阵光纹，「【奇迹动物园救赎系统】绑定成功！已紧急解锁万兽通识语感！」
+        <strong>绝境觉醒</strong>：荒废庭院浮现全息金色数码矩阵，十倍返利面板展开，姜瑾瞳孔泛光，首次听见园区四面八方的动物心声。
       </div>
     </div>
 
     <div class="card">
-      <img class="card-img" src="shot5_qc_frame.png" alt="Shot 5 雄狮绝命钩" onclick="jumpTo(24.8)" style="cursor:pointer;">
       <div class="card-title">
-        <span>第 3 幕 · 狂暴雄狮生死钩</span>
-        <span class="card-tag">00:24.8 - 00:32.8</span>
+        <span>第 3 幕 · 动物群像狂欢</span>
+        <span class="card-tag">01:12.8 - 01:44.8</span>
       </div>
       <div class="card-desc">
-        <strong>终极悬念留钩</strong>：猛兽区红光狂闪，巨大狂暴雄狮金鬃撞弯重型钢网扑面咆哮！獠牙逼近镜头绝命断章，锁死下集完播！
+        <strong>爆笑反差</strong>：秃毛孔雀骂街要求吃纯牛肉、小浣熊死护半块干脆面、调皮金丝猴急得跳脚大喊“猛兽区大猫要破笼了”。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>第 4 幕 · 终极绝命留钩</span>
+        <span class="card-tag">01:44.8 - 02:16.8</span>
+      </div>
+      <div class="card-desc">
+        <strong>终极悬念留钩</strong>：禁区红灯狂闪，地下铁链崩断地动山摇！狂暴金鬃雄狮撞弯铁笼扑面咆哮断章，追更欲望直接拉满！
       </div>
     </div>
   </div>
