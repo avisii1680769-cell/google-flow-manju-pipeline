@@ -146,6 +146,19 @@ python src/cli.py run --config examples/three_body_12s/config.json --duration 12
 
 ---
 
+## 💬 交流与联系 (Contact & Community)
+
+如果您对 **Google Flow 自动化漫剧流水线**、**Veo 3.1 视频生成与角色一致性**、**AI 短剧/漫剧工业化落地** 感兴趣，欢迎添加作者微信或 Telegram 共同交流探讨！
+
+| 微信 (WeChat) | Telegram |
+| :---: | :---: |
+| <img src="assets/wechat_qrcode.png" width="260" alt="微信二维码: Gabor Lu"> | <img src="assets/telegram_qrcode.jpg" width="260" alt="Telegram: @GABORLU"> |
+| **Gabor Lu** (微信扫码添加好友) | **[@GABORLU](https://t.me/GABORLU)** (点击直接跳转) |
+
+> 💡 欢迎技术交流、短剧创作者探讨、项目合作与问题反馈！
+
+---
+
 ## 📄 开源许可证
 
 本项目基于 [MIT License](LICENSE) 开源发布。

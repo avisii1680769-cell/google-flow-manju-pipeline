@@ -222,6 +222,73 @@
       line-height: 1.5;
       flex-grow: 1;
     }
+    .contact-section {
+      width: 100%;
+      max-width: 980px;
+      margin-top: 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .contact-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .contact-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+    .contact-card {
+      background: rgba(10, 15, 24, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .contact-card:hover {
+      border-color: var(--glow-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 255, 119, 0.15);
+    }
+    .contact-qr {
+      width: 220px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .contact-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: var(--glow-green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-sub:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -333,6 +400,23 @@
         <strong>角色表现</strong>：急促喘息，摘镜抱头闭眼，极度绝望战栗。<br>
         <strong>剧情与画面</strong>：官方时间轴【延续镜头】顺承延展，汪淼紧闭双眼，数字在视网膜深处漆黑中永恒燃烧。<br>
         <strong>字幕规范</strong>：无台词处纯净留白，突显高压电磁脉冲声与视觉绝望。
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-title">💬 创作者交流与技术探讨</div>
+    <div class="contact-desc">欢迎对 Google Flow 漫剧流水线、Veo 3.1 视频一致性及 AI 短剧工业化感兴趣的创作者交流合作！</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <img class="contact-qr" src="wechat_qrcode.png" alt="微信二维码: Gabor Lu">
+        <div class="contact-name">微信交流</div>
+        <div class="contact-sub">Gabor Lu (扫码添加)</div>
+      </div>
+      <div class="contact-card">
+        <img class="contact-qr" src="telegram_qrcode.jpg" alt="Telegram 二维码: @GABORLU">
+        <div class="contact-name">Telegram 交流</div>
+        <a class="contact-sub" href="https://t.me/GABORLU" target="_blank">@GABORLU (点击直达)</a>
       </div>
     </div>
   </div>

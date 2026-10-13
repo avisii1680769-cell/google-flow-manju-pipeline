@@ -137,3 +137,14 @@ description: >-
    - 解决方案：必须安装 `fonts-noto-cjk-extra` 并指定 `Noto Sans CJK SC Black`，描边宽度设为 7-8px。
 4. **生成的视频人物前后不连贯**：
    - 解决方案：检查是否在时间轴末尾点击了 `延续镜头（Veo 3.1 - Lite）`。延续镜头生成的视频会在原视频轨道向后延伸，并在卡片上显示切片数量角标（如 `2`）。
+
+---
+
+## 💬 创作者交流与联系 (Contact & Community)
+
+- **作者**：Gabor Lu
+- **微信**：见项目主页二维码 (`assets/wechat_qrcode.png`)
+- **Telegram**：[@GABORLU](https://t.me/GABORLU)
+- **在线影院**：[GitHub Pages 官方影院](https://avisii1680769-cell.github.io/google-flow-manju-pipeline/)
+- **开源仓库**：[google-flow-manju-pipeline](https://github.com/avisii1680769-cell/google-flow-manju-pipeline)
+
