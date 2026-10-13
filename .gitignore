@@ -20,3 +20,5 @@ venv/
 !assets/*.gif
 !examples/**/*.mp4
 !examples/**/*.gif
+!web_player/*.mp4
+!web_player/*.gif
