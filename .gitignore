@@ -22,3 +22,4 @@ venv/
 !examples/**/*.gif
 !web_player/*.mp4
 !web_player/*.gif
+config/*.json

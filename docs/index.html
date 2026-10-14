@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>《继承动物园后，我通兽语成为国家团宠》第1集在线影院 (100% Flow 原生音画 · 逻辑严密剪辑版)</title>
+  <title>《继承动物园后，我通兽语成为国家团宠》短剧在线影院 (100% Flow 原生音画 · 逻辑严密剪辑版)</title>
   <style>
     :root {
       --bg: #07090e;
@@ -11,6 +11,7 @@
       --border: #1a2a40;
       --glow-gold: #f59e0b;
       --glow-blue: #38bdf8;
+      --glow-green: #10b981;
       --glow-red: #ef4444;
       --text: #e2e8f0;
       --text-muted: #94a3b8;
@@ -28,8 +29,8 @@
     }
     .header {
       text-align: center;
-      max-width: 960px;
-      margin-bottom: 24px;
+      max-width: 980px;
+      margin-bottom: 20px;
     }
     .badge {
       display: inline-block;
@@ -58,6 +59,42 @@
       font-size: 14px;
       line-height: 1.6;
     }
+
+    /* 集数切换器 */
+    .ep-selector {
+      display: flex;
+      gap: 12px;
+      margin: 18px 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .ep-tab {
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ep-tab:hover {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--glow-gold);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .ep-tab.active {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      border-color: var(--glow-gold);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+
     .correction-box {
       width: 100%;
       max-width: 980px;
@@ -176,12 +213,15 @@
       color: #fff;
       transform: translateY(-1px);
     }
+
+    /* 剧情卡片网格 */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 16px;
       width: 100%;
       max-width: 980px;
+      margin-bottom: 28px;
     }
     .card {
       background: var(--card-bg);
@@ -216,10 +256,57 @@
       line-height: 1.5;
       flex-grow: 1;
     }
+
+    /* 剧照画廊 */
+    .gallery-section {
+      width: 100%;
+      max-width: 980px;
+      margin-bottom: 28px;
+    }
+    .gallery-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .gallery-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    .gallery-card:hover {
+      border-color: var(--glow-gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+    }
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 600;
+      background: rgba(10, 15, 24, 0.9);
+    }
+
+    /* 联系方式 */
     .contact-section {
       width: 100%;
       max-width: 980px;
-      margin-top: 32px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -285,52 +372,42 @@
 <body>
 
   <div class="header">
-    <div class="badge">🎬 100% FLOW 原生纯音画 · 逻辑严密剪辑 · 2分04秒标准时长 · 拒绝外部TTS · 结尾生死留钩</div>
-    <h1>《继承动物园后，我通兽语成为国家团宠》第 1 集</h1>
-    <p class="subtitle">100% Google Flow (Veo 3.1 - Lite) 原生视频与原生48kHz音轨 · 剪除AI幻觉异常画面 · 字幕与画面声响精确毫秒级对齐</p>
+    <div class="badge">🎬 100% FLOW 原生纯音画 · 工业级逻辑剪辑 · 严格 2分04秒 铁律时长 · 拒绝外部TTS · 高潮生死留钩</div>
+    <h1 id="mainTitle">《继承动物园后，我通兽语成为国家团宠》</h1>
+    <p class="subtitle" id="mainSubtitle">100% Google Flow (Veo 3.1 - Lite) 原生视频与原生48kHz音轨 · 剪除AI幻觉异常画面 · 字幕与画面声响精确毫秒级对齐</p>
+    
+    <!-- 集数切换控制器 -->
+    <div class="ep-selector">
+      <button class="ep-tab active" onclick="switchEpisode(2)" id="tabEp2">
+        <span>🎬 第 2 集：徒手疗狮·直播封神</span>
+        <small style="opacity: 0.8; font-weight: 400;">(02:04 · 最新上线)</small>
+      </button>
+      <button class="ep-tab" onclick="switchEpisode(1)" id="tabEp1">
+        <span>🎬 第 1 集：兽语觉醒·狮王危机</span>
+        <small style="opacity: 0.8; font-weight: 400;">(02:04 · 经典开篇)</small>
+      </button>
+    </div>
   </div>
 
-  <div class="correction-box">
-    <strong>✨ 核心逻辑纠正与制作规范全面落地：</strong><br>
-    • <strong>声音 100% 采用 Flow 生成原声</strong>：坚决杜绝任何后期合成 TTS 或外部假人声，保留最纯正的 Flow 空间环绕原生 48kHz 音质，杜绝口型脱节问题！<br>
-    • <strong>剪辑逻辑严格符合物理与剧情真实</strong>：对「豪车离去」镜头实施精准时码截断，仅保留汽车冲出大铁门扬尘而去的高能 2.6 秒，<strong>彻底剪除后续掉头穿越铁门的 AI 幻觉异常废帧</strong>！<br>
-    • <strong>字幕与原声音浪毫秒级同步</strong>：台词字幕精准绑定在动物扑翅嘶鸣、角色肢体动作与音浪爆发节点，动静严丝合缝。<br>
-    • <strong>严格恪守 2~3 分钟黄金时长</strong>：全片总长 <strong>124.16 秒（2分04秒16）</strong>，完美处于 120s ~ 180s 工业级单集规范内。<br>
-    • <strong>前 5 秒吸睛 + 结尾生死留钩</strong>：开篇小麻雀炸毛与姜瑾把玩钥匙霸气反杀（00:00 - 00:09），结尾狂暴金鬃雄狮撞弯铁笼扑面咆哮断章留钩！
+  <div class="correction-box" id="correctionBox">
+    <!-- 动态填入对应集的规范说明 -->
   </div>
 
   <div class="player-container">
     <div class="video-wrapper">
       <video id="videoPlayer" controls autoplay loop playsinline preload="auto">
-        <source src="zoo_pet_ep01_final.mp4" type="video/mp4">
+        <source id="videoSource" src="zoo_pet_ep02_final.mp4" type="video/mp4">
         您的浏览器暂不支持内置 HTML5 视频播放，请点击下方下载原片观看。
       </video>
     </div>
 
-    <div class="quick-nav">
-      <button class="nav-btn" onclick="jumpTo(0.1)"><span class="dot"></span>00:00 · 【麻雀】两脚兽听得懂鸟话？！</button>
-      <button class="nav-btn" onclick="jumpTo(4.5)"><span class="dot"></span>00:04.5 · 【姜瑾】再叫唤拿你烤了抵债</button>
-      <button class="nav-btn" onclick="jumpTo(9.0)"><span class="dot"></span>00:09.0 · 荒废园区大门·秋风萧瑟</button>
-      <button class="nav-btn" onclick="jumpTo(16.5)"><span class="dot"></span>00:16.5 · 【头目】一千万借贷公证书重砸！</button>
-      <button class="nav-btn" onclick="jumpTo(23.0)"><span class="dot"></span>00:23.0 · 【打手】不想惹事赶紧签字画押！</button>
-      <button class="nav-btn" onclick="jumpTo(29.5)"><span class="dot"></span>00:29.5 · 【姜瑾】三十天全还！带着人滚！</button>
-      <button class="nav-btn" onclick="jumpTo(36.5)"><span class="dot"></span>00:36.5 · 豪车狂飙冲出铁门扬尘离去（剪除回转）</button>
-      <button class="nav-btn" onclick="jumpTo(39.1)"><span class="dot"></span>00:39.1 · 【姜瑾】独伫荒庭·三十天一千万也要闯</button>
-      <button class="nav-btn" onclick="jumpTo(43.6)"><span class="dot"></span>00:43.6 · 【系统】金色救赎数码矩阵觉醒！</button>
-      <button class="nav-btn" onclick="jumpTo(51.1)"><span class="dot"></span>00:51.1 · 【系统】园区全息HUD展开·十倍返利</button>
-      <button class="nav-btn" onclick="jumpTo(58.6)"><span class="dot"></span>00:58.6 · 【姜瑾】瞳孔泛光·耳边涌入动物心声</button>
-      <button class="nav-btn" onclick="jumpTo(66.1)"><span class="dot"></span>01:06.1 · 【孔雀】老子要吃纯牛肉！澳洲牛里脊！</button>
-      <button class="nav-btn" onclick="jumpTo(73.1)"><span class="dot"></span>01:13.1 · 【小浣熊】这是我翻了一早上的干脆面！</button>
-      <button class="nav-btn" onclick="jumpTo(80.1)"><span class="dot"></span>01:20.1 · 【金丝猴】大猫要破笼咬人啦！快跑！</button>
-      <button class="nav-btn" onclick="jumpTo(87.1)"><span class="dot"></span>01:27.1 · 【姜瑾】脸色骤变·提棍奔向猛兽区</button>
-      <button class="nav-btn" onclick="jumpTo(94.1)"><span class="dot"></span>01:34.1 · 猛兽区通道红光警报旋转爆闪！</button>
-      <button class="nav-btn" onclick="jumpTo(101.1)"><span class="dot"></span>01:41.1 · 合金重型铁链崩断·地动山摇！</button>
-      <button class="nav-btn" onclick="jumpTo(108.6)"><span class="dot"></span>01:48.6 · 【姜瑾】推开防暴门·浓雾深处血瞳睁开！</button>
-      <button class="nav-btn" onclick="jumpTo(116.1)"><span class="dot"></span>01:56.1 · 【雄狮留钩】撞弯铁笼扑面咆哮断章！</button>
+    <!-- 快速跳转打点导航 -->
+    <div class="quick-nav" id="quickNav">
+      <!-- 动态填入时码打点 -->
     </div>
 
     <div class="actions">
-      <a class="btn-primary" href="zoo_pet_ep01_final.mp4" download="zoo_pet_ep01_final.mp4">
+      <a class="btn-primary" id="downloadBtn" href="zoo_pet_ep02_final.mp4" download="zoo_pet_ep02_final.mp4">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM12 4v9.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V4h1z"/></svg>
         下载 2分04秒 纯正 Flow 原生母带 (1080p MP4)
       </a>
@@ -341,68 +418,31 @@
     </div>
   </div>
 
-  <div class="cards-grid">
-    <div class="card">
-      <div class="card-title">
-        <span>黄金前置 · 麻雀与黄铜钥匙</span>
-        <span class="card-tag">00:00 - 00:09.0</span>
-      </div>
-      <div class="card-desc">
-        <strong>极速抓人</strong>：小麻雀炸毛惊叫两脚兽成精，姜瑾手抛黄铜钥匙戏谑反杀烤了抵债，纯正 Flow 鸟鸣与环境风声原生呈现。
-      </div>
-    </div>
+  <!-- 分镜故事卡片 -->
+  <div class="cards-grid" id="cardsGrid">
+    <!-- 动态填入剧情卡片 -->
+  </div>
 
-    <div class="card">
-      <div class="card-title">
-        <span>第 1 幕 · 债务重压与豪车驶离</span>
-        <span class="card-tag">00:09.0 - 00:39.1</span>
+  <!-- 剧照画廊 -->
+  <div class="gallery-section">
+    <div class="gallery-title">📸 第 2 集母带高光剧照质检 (1080p 原画)</div>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img class="gallery-img" src="qc_ep02_opening_hook.png" alt="黄金前置：雄狮撞笼怒吼">
+        <div class="gallery-caption">🔥 黄金前置 (00:03)：狂暴金鬃撞弯铁笼扑面咆哮</div>
       </div>
-      <div class="card-desc">
-        <strong>严谨物理逻辑</strong>：千万公证书拍击，打手叫嚣对质，豪车在轰鸣中冲出铁门扬尘而去，<strong>准确剪除后续倒车反穿铁门的错误画面</strong>！
+      <div class="gallery-card">
+        <img class="gallery-img" src="qc_ep02_lion_belly.png" alt="高萌营业：狮王四脚朝天翻肚皮">
+        <div class="gallery-caption">✨ 高萌反差 (01:16)：万兽之王变大猫四脚朝天求点赞</div>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">
-        <span>第 2 幕 · 万灵奇迹系统觉醒</span>
-        <span class="card-tag">00:43.6 - 01:06.1</span>
-      </div>
-      <div class="card-desc">
-        <strong>金手指降临</strong>：荒院升起全息数码矩阵，十倍好感返利功能开启，姜瑾瞳孔泛光，整座动物园的心声瞬间洪流般涌入耳中。
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">
-        <span>第 3 幕 · 动物反差心声群像</span>
-        <span class="card-tag">01:06.1 - 01:27.1</span>
-      </div>
-      <div class="card-desc">
-        <strong>Flow 原生叫声呈现</strong>：秃毛孔雀开屏翻白眼要吃纯牛肉，小浣熊死抱干脆面，金丝猴急得跳脚狂报“大猫疯了要咬人”。
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">
-        <span>第 4 幕 · 危机全速爆发</span>
-        <span class="card-tag">01:27.1 - 01:48.6</span>
-      </div>
-      <div class="card-desc">
-        <strong>节奏拉满</strong>：姜瑾神色剧变提棍狂奔，猛兽区长廊红光刺耳狂闪，重型拘束锁链当场崩断，防暴门后血红凶瞳在浓雾中睁开。
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">
-        <span>第 5 幕 · 终极绝命留钩</span>
-        <span class="card-tag">01:48.6 - 02:04.1</span>
-      </div>
-      <div class="card-desc">
-        <strong>生死断章</strong>：金鬃雄狮狂暴撞弯加厚钢筋铁笼扑面咆哮，Flow 原生低频兽吼音爆直冲耳膜，追更欲望彻底引爆！
+      <div class="gallery-card">
+        <img class="gallery-img" src="qc_ep02_cliffhanger.png" alt="高潮绝命留钩：刑警亮证喝止">
+        <div class="gallery-caption">⚡ 悬念断章 (01:58)：特警破门亮证喝止·雄狮跃起护主</div>
       </div>
     </div>
   </div>
 
+  <!-- 创作者联系方式 -->
   <div class="contact-section">
     <div class="contact-title">💬 创作者交流与技术探讨</div>
     <div class="contact-desc">欢迎对 Google Flow 漫剧流水线、16:9 短剧工业化及 AI 视频全流程感兴趣的伙伴交流合作！</div>
@@ -421,13 +461,190 @@
   </div>
 
   <script>
+    const EPISODE_DATA = {
+      2: {
+        title: "《继承动物园后，我通兽语成为国家团宠》第 2 集：徒手疗狮·直播封神",
+        subtitle: "100% Google Flow (Veo 3.1 - Lite) 原生视频与原生48kHz音轨 · 剪除AI幻觉异常画面 · 严谨物理剪辑",
+        videoSrc: "zoo_pet_ep02_final.mp4",
+        correctionHtml: `
+          <strong>✨ 第 2 集核心剪辑逻辑与制作规范全面落地：</strong><br>
+          • <strong>声音 100% 采用 Flow 生成原声</strong>：坚决杜绝任何后期合成 TTS 或外部假人声，保留最纯正的 Flow 空间环绕原生 48kHz 音质，台词口型与动物叫声完全浑然天成！<br>
+          • <strong>剪辑逻辑严格符合物理与剧情真实</strong>：对 18 个 Flow 原片实施帧级精剪（非简单硬拼），剔除所有 AI 逆向反转及重复废帧，保留动作最干净有力的戏剧切片！<br>
+          • <strong>字幕与原声音浪毫秒级同步</strong>：短剧标准粗黑边白字，人声说台词时才出字幕，动物低哼撒娇时同步呈现绿色 AnimalVoice，系统提示以荧光蓝呈现。<br>
+          • <strong>严格恪守 2~3 分钟黄金时长</strong>：全片总长 <strong>124.50 秒（2分04秒50）</strong>，精准符合 120s ~ 180s 铁律工业规范。<br>
+          • <strong>黄金 5 秒抓人 + 结尾生死留钩</strong>：开篇金鬃狂暴撞笼（00:00 - 00:05.6），结尾警车封山、刑警亮证高声呵止“所有人不许动举起手来”，雄狮护主跃起定格断章！
+        `,
+        nav: [
+          { time: 0.1, label: "00:00 · 【开篇高能】雄狮扑门怒吼·震撼抓人" },
+          { time: 5.6, label: "00:05.6 · 【姜瑾】别叫了，我来帮你" },
+          { time: 11.8, label: "00:11.8 · 【雄狮】呜嗷？人类不怕我？" },
+          { time: 17.8, label: "00:17.8 · 【雄狮】牙缝卡了铁丝·委屈痛哼" },
+          { time: 24.8, label: "00:24.8 · 【姜瑾】徒手探入狮口·忍一下马上好" },
+          { time: 32.0, label: "00:32.0 · 【解救】拔除带血铁丝·大猫脱困" },
+          { time: 38.8, label: "00:38.8 · 【雄狮】四脚朝天撒娇·要摸摸下巴！" },
+          { time: 46.4, label: "00:46.4 · 【姜瑾】堂堂狮王怎么跟大猫一样" },
+          { time: 53.0, label: "00:53.0 · 【系统】千倍救赎返现·百万暴富到账！" },
+          { time: 60.0, label: "01:00.0 · 【开播】濒临破产动物园开启首播" },
+          { time: 66.8, label: "01:06.8 · 【弹幕】全网刷屏炸裂：“那是真狮子啊！”" },
+          { time: 73.8, label: "01:13.8 · 【雄狮】本王也要恰饭·翻肚皮求点赞" },
+          { time: 81.2, label: "01:21.2 · 【榜一大哥】十个嘉年华火箭狂轰！" },
+          { time: 88.4, label: "01:28.4 · 【麻雀】狮子老大居然向两脚兽卖萌？！" },
+          { time: 95.2, label: "01:35.2 · 【姜瑾】还清千万债务·看来不是不可能" },
+          { time: 102.2, label: "01:42.2 · 【危机逼近】警车警笛凄厉呼啸上山" },
+          { time: 109.4, label: "01:49.4 · 【重装包围】警车急刹特警全副武装逼近" },
+          { time: 116.2, label: "01:56.2 · 【终极悬念留钩】刑警亮证喝止·雄狮护主跃起定格！" }
+        ],
+        cards: [
+          {
+            title: "黄金前置 · 狮王撞门与惊愕对视",
+            tag: "00:00 - 00:17.8",
+            desc: "<strong>极速抓人</strong>：狂暴金鬃雄狮撞弯铁栏扑面咆哮，姜瑾冷静踏入推开铁门，狮王瞳孔骤缩呆滞愣在原地，怀疑兽生！"
+          },
+          {
+            title: "第 1 幕 · 徒手拔铁丝与绝顶反差",
+            tag: "00:17.8 - 00:46.4",
+            desc: "<strong>生死救援</strong>：雄狮委屈蹭地痛哼，姜瑾徒手探入狰狞狮口拔出嵌肉铁丝！下一秒狮王四脚朝天呼噜撒娇求揉下巴，万兽之王爆改软萌大猫！"
+          },
+          {
+            title: "第 2 幕 · 系统百万暴富与开辟直播",
+            tag: "00:46.4 - 01:06.8",
+            desc: "<strong>爽感拉满</strong>：救助猛兽触发千倍救赎返现，100万现金秒到账！姜瑾趁热打铁架起手机开播，破产动物园开启首场震撼全网的直面猛兽直播！"
+          },
+          {
+            title: "第 3 幕 · 狮王营业卖萌与全网狂轰",
+            tag: "01:06.8 - 01:42.2",
+            desc: "<strong>高能狂潮</strong>：弹幕疯刷“主播快跑真狮子”，雄狮霸气配合翻肚皮：“本王也要恰饭给园长点赞！”十个嘉年华火箭狂轰，枝头麻雀目瞪口呆三观震碎！"
+          },
+          {
+            title: "第 4 幕 · 警笛啸聚与终极高潮绝命留钩",
+            tag: "01:42.2 - 02:04.5",
+            desc: "<strong>悬念暴击</strong>：夕阳刚展露希望，数十辆警车呼啸封山！重装刑警鸣警破门，掏出金色警官证雷霆厉喝：“不许动举起手来！”雄狮猛然跃起护主，画面骤停定格！"
+          }
+        ]
+      },
+      1: {
+        title: "《继承动物园后，我通兽语成为国家团宠》第 1 集：兽语觉醒·狮王危机",
+        subtitle: "100% Google Flow (Veo 3.1 - Lite) 原生视频与原生48kHz音轨 · 剪除AI幻觉异常画面 · 严格2分04秒标准时长",
+        videoSrc: "zoo_pet_ep01_final.mp4",
+        correctionHtml: `
+          <strong>✨ 第 1 集核心逻辑纠正与制作规范全面落地：</strong><br>
+          • <strong>声音 100% 采用 Flow 生成原声</strong>：坚决杜绝任何后期合成 TTS 或外部假人声，保留最纯正的 Flow 空间环绕原生 48kHz 音质，杜绝口型脱节问题！<br>
+          • <strong>剪辑逻辑严格符合物理与剧情真实</strong>：对「豪车离去」镜头实施精准时码截断，仅保留汽车冲出大铁门扬尘而去的高能 2.6 秒，<strong>彻底剪除后续掉头穿越铁门的 AI 幻觉异常废帧</strong>！<br>
+          • <strong>字幕与原声音浪毫秒级同步</strong>：台词字幕精准绑定在动物扑翅嘶鸣、角色肢体动作与音浪爆发节点，动静严丝合缝。<br>
+          • <strong>严格恪守 2~3 分钟黄金时长</strong>：全片总长 <strong>124.16 秒（2分04秒16）</strong>，完美处于 120s ~ 180s 工业级单集规范内。<br>
+          • <strong>前 5 秒吸睛 + 结尾生死留钩</strong>：开篇小麻雀炸毛与姜瑾把玩钥匙霸气反杀（00:00 - 00:09），结尾狂暴金鬃雄狮撞弯铁笼扑面咆哮断章留钩！
+        `,
+        nav: [
+          { time: 0.1, label: "00:00 · 【麻雀】两脚兽听得懂鸟话？！" },
+          { time: 4.5, label: "00:04.5 · 【姜瑾】再叫唤拿你烤了抵债" },
+          { time: 9.0, label: "00:09.0 · 荒废园区大门·秋风萧瑟" },
+          { time: 16.5, label: "00:16.5 · 【头目】一千万借贷公证书重砸！" },
+          { time: 23.0, label: "00:23.0 · 【打手】不想惹事赶紧签字画押！" },
+          { time: 29.5, label: "00:29.5 · 【姜瑾】三十天全还！带着人滚！" },
+          { time: 36.5, label: "00:36.5 · 豪车狂飙冲出铁门扬尘离去（剪除回转）" },
+          { time: 39.1, label: "00:39.1 · 【姜瑾】独伫荒庭·三十天一千万也要闯" },
+          { time: 43.6, label: "00:43.6 · 【系统】金色救赎数码矩阵觉醒！" },
+          { time: 51.1, label: "00:51.1 · 【系统】园区全息HUD展开·十倍返利" },
+          { time: 58.6, label: "00:58.6 · 【姜瑾】瞳孔泛光·耳边涌入动物心声" },
+          { time: 66.1, label: "01:06.1 · 【孔雀】老子要吃纯牛肉！澳洲牛里脊！" },
+          { time: 73.1, label: "01:13.1 · 【小浣熊】这是我翻了一早上的干脆面！" },
+          { time: 80.1, label: "01:20.1 · 【金丝猴】大猫要破笼咬人啦！快跑！" },
+          { time: 87.1, label: "01:27.1 · 【姜瑾】脸色骤变·提棍奔向猛兽区" },
+          { time: 94.1, label: "01:34.1 · 猛兽区通道红光警报旋转爆闪！" },
+          { time: 101.1, label: "01:41.1 · 合金重型铁链崩断·地动山摇！" },
+          { time: 108.6, label: "01:48.6 · 【姜瑾】推开防暴门·浓雾深处血瞳睁开！" },
+          { time: 116.1, label: "01:56.1 · 【雄狮留钩】撞弯铁笼扑面咆哮断章！" }
+        ],
+        cards: [
+          {
+            title: "黄金前置 · 麻雀与黄铜钥匙",
+            tag: "00:00 - 00:09.0",
+            desc: "<strong>极速抓人</strong>：小麻雀炸毛惊叫两脚兽成精，姜瑾手抛黄铜钥匙戏谑反杀烤了抵债，纯正 Flow 鸟鸣与环境风声原生呈现。"
+          },
+          {
+            title: "第 1 幕 · 债务重压与豪车驶离",
+            tag: "00:09.0 - 00:39.1",
+            desc: "<strong>严谨物理逻辑</strong>：千万公证书拍击，打手叫嚣对质，豪车在轰鸣中冲出铁门扬尘而去，<strong>准确剪除后续倒车反穿铁门的错误画面</strong>！"
+          },
+          {
+            title: "第 2 幕 · 万灵奇迹系统觉醒",
+            tag: "00:43.6 - 01:06.1",
+            desc: "<strong>金手指降临</strong>：荒院升起全息数码矩阵，十倍好感返利功能开启，姜瑾瞳孔泛光，整座动物园的心声瞬间洪流般涌入耳中。"
+          },
+          {
+            title: "第 3 幕 · 动物反差心声群像",
+            tag: "01:06.1 - 01:27.1",
+            desc: "<strong>Flow 原生叫声呈现</strong>：秃毛孔雀开屏翻白眼要吃纯牛肉，小浣熊死抱干脆面，金丝猴急得跳脚狂报“大猫疯了要咬人”。"
+          },
+          {
+            title: "第 4 幕 · 危机全速爆发与终极绝命留钩",
+            tag: "01:27.1 - 02:04.1",
+            desc: "<strong>生死断章</strong>：金鬃雄狮狂暴撞弯加厚钢筋铁笼扑面咆哮，Flow 原生低频兽吼音爆直冲耳膜，追更欲望彻底引爆！"
+          }
+        ]
+      }
+    };
+
     const player = document.getElementById('videoPlayer');
+    const sourceEl = document.getElementById('videoSource');
+    const titleEl = document.getElementById('mainTitle');
+    const subtitleEl = document.getElementById('mainSubtitle');
+    const correctionEl = document.getElementById('correctionBox');
+    const navEl = document.getElementById('quickNav');
+    const cardsEl = document.getElementById('cardsGrid');
+    const dlBtn = document.getElementById('downloadBtn');
+
+    function switchEpisode(epNum) {
+      document.getElementById('tabEp1').classList.toggle('active', epNum === 1);
+      document.getElementById('tabEp2').classList.toggle('active', epNum === 2);
+
+      const data = EPISODE_DATA[epNum];
+      titleEl.innerText = data.title;
+      subtitleEl.innerText = data.subtitle;
+      correctionEl.innerHTML = data.correctionHtml;
+      dlBtn.href = data.videoSrc;
+      dlBtn.download = data.videoSrc;
+
+      // 更新播放器源并播放
+      sourceEl.src = data.videoSrc;
+      player.load();
+      player.play().catch(e => console.log('Autoplay handled:', e));
+
+      // 渲染打点按钮
+      navEl.innerHTML = '';
+      data.nav.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'nav-btn';
+        btn.innerHTML = `<span class="dot"></span>${item.label}`;
+        btn.onclick = () => jumpTo(item.time);
+        navEl.appendChild(btn);
+      });
+
+      // 渲染剧情卡片
+      cardsEl.innerHTML = '';
+      data.cards.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <div class="card-title">
+            <span>${card.title}</span>
+            <span class="card-tag">${card.tag}</span>
+          </div>
+          <div class="card-desc">${card.desc}</div>
+        `;
+        cardsEl.appendChild(div);
+      });
+    }
+
     function jumpTo(time) {
       if (player) {
         player.currentTime = time;
         player.play().catch(e => console.log('Autoplay blocked:', e));
       }
     }
+
+    // 初始化默认加载第 2 集
+    switchEpisode(2);
   </script>
 </body>
 </html>
